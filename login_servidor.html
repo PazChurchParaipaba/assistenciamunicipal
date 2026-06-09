@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Servidor - Paraipaba Alerta</title>
+  <link rel="icon" href="Gemini_Generated_Image_myfvbdmyfvbdmyfv.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .login-wrapper {
+      max-width: 420px;
+      margin: 5rem auto;
+      background: var(--card-bg);
+      padding: 3rem 2.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+      animation: slideUp 0.4s ease-out;
+    }
+    .error-message {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--danger);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      display: none;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      text-align: center;
+      font-weight: 500;
+    }
+    .app-logo {
+      width: 80px;
+      margin-bottom: 1rem;
+    }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <div class="login-wrapper">
+    <header style="margin-top: 0; margin-bottom: 2rem; text-align: center;">
+      <img src="Gemini_Generated_Image_myfvbdmyfvbdmyfv.png" alt="Paraipaba Alerta" class="app-logo">
+      <h1>Paraipaba Alerta</h1>
+      <p class="subtitle" style="color: var(--text-muted); font-size: 0.95rem;">Acesso Restrito - Servidores</p>
+    </header>
+
+    <form id="loginForm">
+      <div id="errorMsg" class="error-message"></div>
+      
+      <div id="groupNome" class="form-group" style="margin-bottom: 1.5rem; display: none;">
+        <label for="nome" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nome Completo</label>
+        <input type="text" id="nome" placeholder="Seu Nome Completo" style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: transparent; color: var(--text-main);">
+      </div>
+
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">E-mail Institucional</label>
+        <input type="email" id="email" required placeholder="servidor@paraipaba.ce.gov.br" style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: transparent; color: var(--text-main);">
+      </div>
+      
+      <div class="form-group" style="margin-bottom: 2rem;">
+        <label for="password" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Senha</label>
+        <input type="password" id="password" required placeholder="••••••••" style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: transparent; color: var(--text-main);">
+      </div>
+
+      <div id="groupSecretaria" class="form-group" style="margin-bottom: 2rem; display: none;">
+        <label for="secretaria" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Secretaria</label>
+        <select id="secretaria" style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-main);">
+          <option value="" disabled selected>Selecione...</option>
+          <option value="Todas">Administração (Todas)</option>
+          <option value="Infraestrutura">Infraestrutura</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Meio Ambiente">Meio Ambiente</option>
+          <option value="Iluminação Pública">Iluminação Pública</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Educação">Educação</option>
+          <option value="Assistência Social">Assistência Social</option>
+          <option value="Turismo">Turismo</option>
+          <option value="Governo">Governo</option>
+        </select>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+        <button type="submit" id="btnSubmitAuth" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">Entrar no Painel</button>
+        <div style="text-align: center; margin-top: 0.5rem;">
+          <a href="#" id="toggleAuthMode" style="color: var(--primary); text-decoration: none; font-size: 0.95rem; font-weight: 600;">Novo servidor? Solicitar acesso</a>
+        </div>
+      </div>
+    </form>
+    
+    <nav style="text-align: center; margin-top: 2rem;">
+      <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)';" onmouseout="this.style.color='var(--text-muted)';">&larr; Voltar ao Portal do Cidadão</a>
+    </nav>
+  </div>
+
+  <script type="module" src="login_servidor.js"></script>
+</body>
+</html>
